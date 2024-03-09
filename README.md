@@ -8,7 +8,7 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
--   `apps/api-build`: an [Express/Node](https://expressjs.com/) backend
+-   `apps/api-build`: - setup docker image, build project and upload to S3
 -   `apps/web`: a [React.js](https://react.dev/) frontend
 -   `packages/common`: package for sharing code used in multiple apps
 -   `packages/ui`: a stub React component library used in `web`
