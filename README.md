@@ -8,6 +8,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
+-   `apps/api`: an [Express/Node](https://expressjs.com/) backend to spin aws ecs containers and other core logic
+-   `apps/api-proxy`: an [Express/Node](https://expressjs.com/) backend reverse proxy to map to s3 url
 -   `apps/api-build`: - setup docker image, build project and upload to S3
 -   `apps/web`: a [React.js](https://react.dev/) frontend
 -   `packages/common`: package for sharing code used in multiple apps
