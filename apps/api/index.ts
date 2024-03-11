@@ -2,6 +2,7 @@ import express from 'express';
 import { generateSlug } from 'random-word-slugs';
 import { ECSClient, RunTaskCommand } from '@aws-sdk/client-ecs';
 import dotenv from "dotenv";
+import cors from "cors"
 dotenv.config();
 
 const app = express()
@@ -21,6 +22,7 @@ const config = {
 }
 
 app.use(express.json())
+app.use(cors())
 
 app.post('/project', async (req, res) => {
     const { gitURL, slug } = req.body
