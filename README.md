@@ -31,3 +31,7 @@ This Turborepo has some additional tools already setup for you:
 2. Add internal package to dependencies like `"common": "*"`
 3. Change `rootDir` to `./src` and `outDir` to `./dist`
 4. Update `moduleResolution` and `module` in `tsconfig.json` to `nodenext` and `NodeNext` respectively - need to update code to use `typescript-config` in all apps/packages
+
+#### Learnings
+
+- To ensure external accessibility, it is crucial to ensure that the Vite server is correctly bound to 0.0.0.0 rather than localhost or 127.0.0.1 within the container. This binding ensures that the server listens on all network interfaces, facilitating access from outside the container, including from the host machine. Adjustment to the Vite configuration to explicitly set the host to 0.0.0.0 can be accomplished by modifying the vite.config.ts file or by appending the --host flag to the vite. Command - `vite --host`

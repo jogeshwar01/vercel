@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  vercel-app-base:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:9000"
+      - "5001:9001"
+      - "5002:5173"
+    volumes:
+      - ./:/app
