@@ -8,22 +8,22 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
--   `apps/api`: an [Express/Node](https://expressjs.com/) backend to spin aws ecs containers and other core logic
--   `apps/api-proxy`: an [Express/Node](https://expressjs.com/) backend reverse proxy to map to s3 url
--   `apps/api-build`: - setup docker image, build project and upload to S3
--   `apps/web`: a [React.js](https://react.dev/) frontend
--   `packages/common`: package for sharing code used in multiple apps
--   `packages/ui`: a stub React component library used in `web`
--   `packages/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
--   `packages/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `apps/api`: an [Express/Node](https://expressjs.com/) backend to spin aws ecs containers and other core logic
+- `apps/api-proxy`: an [Express/Node](https://expressjs.com/) backend reverse proxy to map to s3 url
+- `apps/api-build`: - setup docker image, build project and upload to S3
+- `apps/web`: a [React.js](https://react.dev/) frontend
+- `packages/common`: package for sharing code used in multiple apps
+- `packages/ui`: a stub React component library used in `web`
+- `packages/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `packages/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 ### Utilities
 
 This Turborepo has some additional tools already setup for you:
 
--   [TypeScript](https://www.typescriptlang.org/) for static type checking
--   [ESLint](https://eslint.org/) for code linting
--   [Prettier](https://prettier.io) for code formatting
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
 
 #### Setup new node app
 
