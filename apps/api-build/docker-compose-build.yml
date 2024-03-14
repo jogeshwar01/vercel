@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+    web:
+        container_name: vercel-build-server
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        shm_size: 1gb
+        tty: true
+        restart: always
+        env_file: ./.env
+        networks:
+            - vercel
+        ports:
+            - "9999:8000"
+        volumes:
+            - ./:/:rw
+
+networks:
+    vercel: {}
