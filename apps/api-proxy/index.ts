@@ -15,21 +15,21 @@ const proxy = httpProxy.createProxy();
 // Migrate to s3, get index.html from folder <PROJECT_ID> in s3 and stream it back to frontend
 
 app.use((req, res) => {
-    const hostname = req.hostname;
-    const subdomain = hostname.split(".")[0];
+  const hostname = req.hostname;
+  const subdomain = hostname.split(".")[0];
 
-    // To add support for Custom Domain - DB Query to search for corresponding project id for a domain
+  // To add support for Custom Domain - DB Query to search for corresponding project id for a domain
 
-    const resolvesTo = `${BASE_PATH}/${subdomain}`;
+  const resolvesTo = `${BASE_PATH}/${subdomain}`;
 
-    return proxy.web(req, res, { target: resolvesTo, changeOrigin: true });
+  return proxy.web(req, res, { target: resolvesTo, changeOrigin: true });
 });
 
 proxy.on("proxyReq", (proxyReq, req, res) => {
-    const url = req.url;
+  const url = req.url;
 
-    // to route / to /index.html
-    if (url === "/") proxyReq.path += "index.html";
+  // to route / to /index.html
+  if (url === "/") proxyReq.path += "index.html";
 });
 
 app.listen(PORT, () => console.log(`Reverse Proxy Running..${PORT}`));
