@@ -72,9 +72,12 @@ async function init() {
             console.log("uploaded", filePath);
         }
 
-        publishLog(`Done`)
-        console.log("Done...");
-        process.exit(0);
+        publishLog(`Deployment Complete`)
+        console.log("Deployment Complete");
+
+        setTimeout(() => {
+            process.exit(0);
+        }, 5000);
     });
 }
 

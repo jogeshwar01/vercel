@@ -1,6 +1,6 @@
 export function Terminal({ logs }: { logs: string[] }) {
   return (
-    <div className="bg-black h-screen shadow-md p-4">
+    <div className="bg-black h-screen shadow-md p-4 overflow-auto">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <div className="h-3 w-3 bg-red-500 rounded-full"></div>
