@@ -9,8 +9,10 @@ dotenv.config();
 
 const app = express();
 const PORT = 9001;
+const REDIS_INSTANCE_URL = process.env.REDIS_INSTANCE_URL;
 
-const subscriber = new Redis();
+// @ts-ignore
+const subscriber = new Redis(REDIS_INSTANCE_URL);
 
 const io = new Server({ cors: { origin: "*" } });
 
@@ -68,6 +70,7 @@ app.post("/project", async (req, res) => {
             { name: "AWS_SECRET_KEY", value: process.env.AWS_SECRET_KEY },
             { name: "AWS_REGION_NAME", value: process.env.AWS_REGION_NAME },
             { name: "AWS_S3_BUCKET", value: process.env.AWS_S3_BUCKET },
+            { name: "REDIS_INSTANCE_URL", value: process.env.REDIS_INSTANCE_URL },
           ],
         },
       ],

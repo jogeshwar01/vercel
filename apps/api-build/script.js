@@ -4,7 +4,7 @@ import fs from "fs";
 import mime from "mime-types";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import Redis from 'ioredis';
-const publisher = new Redis()
+const publisher = new Redis(process.env.REDIS_INSTANCE_URL)
 const PROJECT_ID = process.env.PROJECT_ID
 
 async function publishLog(log) {
@@ -74,6 +74,7 @@ async function init() {
 
         publishLog(`Done`)
         console.log("Done...");
+        process.exit(0);
     });
 }
 
