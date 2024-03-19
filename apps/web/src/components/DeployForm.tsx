@@ -12,9 +12,10 @@ import { CopyInput } from "./CopyInput";
 
 interface DeployFormProps {
   setLogs: Dispatch<SetStateAction<string[]>>;
+  setProjects: Dispatch<SetStateAction<string[]>>;
 }
 
-export function DeployForm({ setLogs }: DeployFormProps) {
+export function DeployForm({ setLogs,setProjects }: DeployFormProps) {
   const [githubUrl, setGithubUrl] = useState<string>("");
   const [slug, setSlug] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -37,8 +38,9 @@ export function DeployForm({ setLogs }: DeployFormProps) {
 
       setDeployed(true);
       setIsLoading(false);
+      setProjects((previous) => [...previous, slug]);
     },
-    [githubUrl, slug, setLogs]
+    [githubUrl, slug, setLogs,setProjects]
   );
 
   useEffect(() => {
